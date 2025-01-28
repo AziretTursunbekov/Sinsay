@@ -1,10 +1,11 @@
-import React from "react";
 import { ProductList } from "./components/ProductList";
+import { Icons } from "./assets";
 
 const App = () => {
   return (
     <div>
       <ProductList />
+      <Icons.like />
     </div>
   );
 };
