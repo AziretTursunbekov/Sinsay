@@ -1,8 +1,8 @@
-// import green from "../assets/images/green.png";
-// import black1 from "../assets/images/black1.png";
-// import white1 from "../assets/images/white1.png";
-// import icon from "../assets/images/icon.png";
-// import moloko from "../assets/images/moloko.png";
+import green from "./assets/images/green.png";
+import black1 from "./assets/images/black1.png";
+import white1 from "./assets/images/white1.png";
+import icon from "./assets/images/icon.png";
+import moloko from "./assets/images/moloko.png";
 
 export const products = [
   {

@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { Icons } from "../assets";
 import { products } from "../constatnts";
 
-
 export const ProductList = () => {
   return (
     <Container>
       {products.map((category) => (
-        <div key={category.category}>
+        <div
+          key={category.category}
+          style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+        >
           <CategoryTitle>{category.category}</CategoryTitle>
           <Grid>
             {category.items.map((item) => (
@@ -18,7 +20,6 @@ export const ProductList = () => {
                   <Price>{item.price}</Price>
                   <Icons.like />
                 </Sdabi>
-
                 <Button>Add to cart</Button>
               </Card>
             ))}
@@ -40,12 +41,15 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: "Montserrat", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;
 
-const CategoryTitle = styled.h2`
-  font-size: 24px;
-  font-weight: bold;
+const CategoryTitle = styled.h`
+  font-size: 47px;
+  font-weight: 500;
   margin-bottom: 20px;
   padding-bottom: 8px;
 `;
