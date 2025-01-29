@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Icons } from "../assets";
+import Button from "../components/UI/Button";
 
 const Footer = () => {
   return (
@@ -40,7 +41,9 @@ const Footer = () => {
           Sign up for exclusive offers, original stories, events and more.
         </p>
         <input type="text" placeholder="Enter email" />
-        <BtnStyled>Subscribe</BtnStyled>
+        <Button variant={"contained"} className="BtnStyled">
+          Subscribe
+        </Button>
       </ArticleStyled3>
     </FooterStyled>
   );
@@ -120,19 +123,19 @@ const ArticleStyled3 = styled.article`
     line-height: 19.2px;
     color: #676869;
   }
+  .BtnStyled {
+    width: 130px;
+    height: 49px;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    background-color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+  }
 `;
 const SpanStyled = styled.span`
   display: flex;
   gap: 30px;
-`;
-const BtnStyled = styled.button`
-  width: 130px;
-  height: 49px;
-  border: none;
-  padding: 15px 25px;
-  color: white;
-  background-color: #000;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.2px;
 `;
