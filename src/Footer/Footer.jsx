@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Icons } from "../assets";
 
 const Footer = () => {
   return (
@@ -11,6 +12,11 @@ const Footer = () => {
           <div>Monday - Friday</div>
           <div>10:00 am to 17:00 pm</div>
         </p>
+        <SpanStyled>
+          <Icons.twiter />
+          <Icons.iconoir_facebook />
+          <Icons.instagramm />
+        </SpanStyled>
         <p className="PTag5">© 2025 SINSEY Official. Powered by Shopify</p>
       </ArticleStyled>
       <ArticleStyled2>
@@ -34,7 +40,7 @@ const Footer = () => {
         <p className="ptag3">
           Sign up for exclusive offers, original stories, events and more.
         </p>
-        <button>Subscribe</button>
+        <BtnStyled>Subscribe</BtnStyled>
       </ArticleStyled3>
     </FooterStyled>
   );
@@ -48,7 +54,7 @@ const FooterStyled = styled.footer`
   font-weight: 400px;
   display: flex;
   justify-content: space-between;
-  padding: 40px 70px;
+  padding: 40px 80px;
 `;
 const ArticleStyled = styled.article`
   display: flex;
@@ -113,4 +119,16 @@ const ArticleStyled3 = styled.article`
     line-height: 19.2px;
     color: #676869;
   }
+`;
+const SpanStyled = styled.span`
+  display: flex;
+  gap: 30px;
+`;
+const BtnStyled = styled.button`
+  width: 130px;
+  height: 49px;
+  border: none;
+  padding: 15px 25px;
+  color: white;
+  background-color: #000000;
 `;
