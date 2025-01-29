@@ -23,19 +23,16 @@ export default function Header() {
     </StyledHeader>
   );
 }
-const Styledh4 = styled.h4`
-  text-align: center;
-  font-size: 36px;
-`;
+
 const Styledman = styled.div`
   display: flex;
   justify-content: end;
   gap: 50px;
+  align-items: center;
 `;
 
 const AnimatedHeading = styled.h2`
   display: flex;
-  font-family: Montserrat;
   font-size: 40px;
   font-weight: bold;
   color: black;
