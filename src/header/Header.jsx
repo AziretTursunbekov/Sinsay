@@ -30,7 +30,10 @@ const Styledh4 = styled.h4`
 const Styledman = styled.div`
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: 50px;
+  width: 275px;
+  height: 30px;
 `;
 
 const AnimatedHeading = styled.h2`
@@ -75,7 +78,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   border-bottom: 2px solid;
   width: 80%;
-  height: 89px;
+  height: 80px;
   padding: 0 20px;
   margin: 0 auto;
 `;
