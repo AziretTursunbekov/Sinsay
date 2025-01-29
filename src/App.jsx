@@ -1,13 +1,10 @@
 import React from "react";
-import { Icons } from "./assets";
-import Slider from "./Slider";
-
+import Header from "./header/Header";
 const App = () => {
   return (
     <div>
-      <Slider />
+      <Header />
     </div>
   );
 };
-
 export default App;
