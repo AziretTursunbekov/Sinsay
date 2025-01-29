@@ -130,5 +130,5 @@ const BtnStyled = styled.button`
   border: none;
   padding: 15px 25px;
   color: white;
-  background-color: #000000;
+  background-color: #000;
 `;
