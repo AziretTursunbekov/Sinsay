@@ -1,8 +1,12 @@
 import React from "react";
-import { Icons } from "./assets";
+import Header from "./header/Header";
 
 const App = () => {
-  return <div>hello</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default App;
