@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Icons } from "../assets";
-import Button from "../components/UI/Button";
+import { Icons } from "../../assets";
+import Button from "../UI/Button";
 
 const Footer = () => {
   return (
