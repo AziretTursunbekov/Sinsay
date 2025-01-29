@@ -36,10 +36,10 @@ const Footer = () => {
       </ArticleStyled2>
       <ArticleStyled3>
         <p className="PTag-1Art3">Newsletter</p>
-        <input type="text" placeholder="Enter email" />
         <p className="ptag3">
           Sign up for exclusive offers, original stories, events and more.
         </p>
+        <input type="text" placeholder="Enter email" />
         <BtnStyled>Subscribe</BtnStyled>
       </ArticleStyled3>
     </FooterStyled>
@@ -100,6 +100,7 @@ const ArticleStyled3 = styled.article`
     color: #171717;
     font-size: 21px;
     line-height: 25.2px;
+    font-weight: 400;
   }
   input {
     width: 310px;
@@ -131,4 +132,7 @@ const BtnStyled = styled.button`
   padding: 15px 25px;
   color: white;
   background-color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
 `;
