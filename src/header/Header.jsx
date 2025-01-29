@@ -13,27 +13,21 @@ export default function Header() {
           </AnimatedLetter>
         ))}
       </AnimatedHeading>
-
-      <Styledman>
+      <StyledMan>
         <Icons.Poisk />
         <Icons.profile />
         <Icons.like />
         <Icons.Sumka />
-      </Styledman>
+      </StyledMan>
     </StyledHeader>
   );
 }
-const Styledh4 = styled.h4`
-  text-align: center;
-  font-size: 36px;
-`;
-const Styledman = styled.div`
+
+const StyledMan = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 50px;
-  width: 275px;
-  height: 30px;
 `;
 
 const AnimatedHeading = styled.h2`
