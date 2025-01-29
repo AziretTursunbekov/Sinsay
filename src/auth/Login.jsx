@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components';
 
-export default function Main() {
+export default function Login() {
   return (
     <StyledBigContainer>
       <StyledForm>
@@ -28,6 +28,7 @@ const StyledBigContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
 `;
 
 const StyledForm = styled.form`
@@ -44,12 +45,14 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 15px;
 `;
 
 const StyledInput = styled.input`
   width: 542px;
   height: 80px;
   font-size: x-large;
+  padding-left: 15px;
 `;
 
 const StyledForgot = styled.p`
@@ -65,3 +68,4 @@ const StyledButton = styled.button`
   border: none;
   margin-top: 15px;
 `;
+

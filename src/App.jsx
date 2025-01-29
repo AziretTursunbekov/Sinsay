@@ -1,12 +1,12 @@
 import React from "react";
-import Main from "./components/main/Main";
+import Login from "./auth/Login";
 
 const App = () => {
   return <div>
 
-    <Main/>
+    <Login/>
 
-  </div>;
+  </div>
 };
 
 export default App;
