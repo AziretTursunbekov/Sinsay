@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Image from "../../assets/images/image.png";
 import { product } from "../../utils/constants";
 
 const CartList = () => {

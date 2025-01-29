@@ -1,12 +1,8 @@
 import React from "react";
-import CartList from "./component/CartList/CartList";
+import { Icons } from "./assets";
 
 const App = () => {
-  return (
-    <div>
-      <CartList />
-    </div>
-  );
+  return <div>hello</div>;
 };
 
 export default App;
