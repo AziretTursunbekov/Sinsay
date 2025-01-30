@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Icons } from "../assets";
 import { products } from "../constatnts";
+import Button from "./UI/Button";
 
 export const ProductList = () => {
   return (
@@ -20,7 +21,9 @@ export const ProductList = () => {
                   <Price>{item.price}</Price>
                   <Icons.like />
                 </Sdabi>
-                <Button>Add to cart</Button>
+                <Button variant={"contained"} className="button">
+                  Add to cart
+                </Button>
               </Card>
             ))}
           </Grid>
@@ -70,6 +73,27 @@ const Card = styled.div`
   &:hover {
     transform: translateY(-10px);
   }
+  .button {
+    background: black;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 10px rgba(0, 0, 0, 0.1);
+
+      transition: 2s;
+    }
+    &:active {
+      transform: translateY(+10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
 `;
 
 const Image = styled.img`
@@ -89,19 +113,4 @@ const Price = styled.p`
   font-size: 14px;
   color: #000000;
   font-weight: 700;
-`;
-
-const Button = styled.button`
-  background: black;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 14px;
-  font-weight: bold;
-  &:hover {
-    background: #333;
-  }
 `;
