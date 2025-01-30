@@ -1,10 +1,15 @@
 import React from "react";
 import Login from "./auth/Login";
+import WishList from "./WishList";
+
+
+
 
 const App = () => {
   return <div>
 
-    <Login/>
+<Login/>
+<WishList/>
 
   </div>
 };
