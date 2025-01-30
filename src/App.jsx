@@ -1,4 +1,10 @@
+import About from "./pages/about/About";
+
 const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <About />
+    </div>
+  );
 };
 export default App;
