@@ -13,20 +13,20 @@ export default function Header() {
           </AnimatedLetter>
         ))}
       </AnimatedHeading>
-
-      <Styledman>
+      <StyledMan>
         <Icons.Poisk />
         <Icons.profile />
         <Icons.like />
         <Icons.Sumka />
-      </Styledman>
+      </StyledMan>
     </StyledHeader>
   );
 }
 
-const Styledman = styled.div`
+const StyledMan = styled.div`
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: 50px;
   align-items: center;
 `;
