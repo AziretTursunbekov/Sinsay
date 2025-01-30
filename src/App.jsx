@@ -1,6 +1,5 @@
 import React from "react";
-import Login from "./auth/Login";
-import WishList from "./WishList";
+
 
 
 
