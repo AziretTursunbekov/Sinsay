@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { product } from "../utils/constants";
+import Button from "./UI/Button";
 
 const CartList = () => {
   return (
@@ -50,8 +51,8 @@ const CartList = () => {
         <StyledPP>Tax included. Shipping calculated at checkout.</StyledPP>
       </StyledSubtotal>
       <ButtonContainer>
-        <StyledButtOn1> Continue shopping</StyledButtOn1>
-        <SyledBUTTON2>Checkout </SyledBUTTON2>
+        <Button variant="contained"> Continue shopping</Button>
+        <Button variant="contained"> Checkout</Button>
       </ButtonContainer>
     </StyledContainer>
   );
@@ -121,28 +122,6 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 50px;
-`;
-
-const StyledButtOn1 = styled.button`
-  width: 283px;
-  height: 65px;
-  font-size: 21px;
-  font-weight: 400;
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  padding: 20px 15px;
-`;
-
-const SyledBUTTON2 = styled.button`
-  width: 182px;
-  height: 65px;
-  font-size: 21px;
-  font-weight: 400;
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  padding: 20px 15px;
 `;
 
 const StyledPP = styled.p`

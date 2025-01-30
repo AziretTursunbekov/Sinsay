@@ -1,8 +1,8 @@
-import React from "react";
-import { Icons } from "./assets";
+import CartList from "./components/CartList";
 
 const App = () => {
-  return <div>hello</div>;
+  return <div>
+    <CartList/>
+  </div>;
 };
-
 export default App;
