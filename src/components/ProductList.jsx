@@ -47,7 +47,7 @@ const Container = styled.div`
   gap: 30px;
 `;
 
-const CategoryTitle = styled.h`
+const CategoryTitle = styled.h3`
   font-size: 47px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -68,7 +68,7 @@ const Card = styled.div`
   text-align: center;
   transition: transform 0.2s ease-in-out;
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
   }
 `;
 
@@ -87,7 +87,8 @@ const Name = styled.p`
 
 const Price = styled.p`
   font-size: 14px;
-  color: #555;
+  color: #000000;
+  font-weight: 700;
 `;
 
 const Button = styled.button`
