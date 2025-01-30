@@ -1,5 +1,8 @@
 import React from "react";
-
+import { product } from "../../utils/constants";
+import styled from "styled-components";
+import Button from "./Button";
+import { Icons } from "../../assets";
 const CartList = () => {
   return (
     <StyledContainer>
@@ -17,8 +20,8 @@ const CartList = () => {
       </StyledLi>
       <StyledUl>
         {product.map((item) => (
-          <div>
-            <div key={item.id}>
+          <div key={item.id}>
+            <div>
               <StyledLi>
                 <div className="div">
                   <img src={item.image} alt="" />
@@ -37,7 +40,7 @@ const CartList = () => {
                     </div>
                   </div>
                 </div>
-                <img src={item.cartina} alt="" />
+                <Icons.Delete className="svg" />
               </StyledLi>
             </div>
           </div>
@@ -164,6 +167,15 @@ const StyledLi = styled.li`
     justify-content: start;
     align-items: center;
     gap: 90px;
+    img {
+      width: 164px;
+      height: 157px;
+      object-fit: cover;
+    }
+  }
+  .svg {
+    width: 50px;
+    height: 50px;
   }
 `;
 
