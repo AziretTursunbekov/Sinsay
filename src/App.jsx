@@ -1,12 +1,5 @@
 import React from "react";
-import Header from "./pages/header/Header";
-import Footer from "./pages/Footer/Footer";
 const App = () => {
-  return (
-    <div>
-      <Header />
-      <Footer />
-    </div>
-  );
+  return <div></div>;
 };
 export default App;
