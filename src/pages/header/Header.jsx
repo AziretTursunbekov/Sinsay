@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Icons } from "../assets";
+import { Icons } from "../../assets";
 
 export default function Header() {
   return (
@@ -28,11 +28,11 @@ const StyledMan = styled.div`
   justify-content: end;
   align-items: center;
   gap: 50px;
+  align-items: center;
 `;
 
 const AnimatedHeading = styled.h2`
   display: flex;
-  font-family: Montserrat;
   font-size: 40px;
   font-weight: bold;
   color: black;
@@ -71,8 +71,8 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid;
-  width: 80%;
-  height: 80px;
-  padding: 0 20px;
+  width: 100%;
+  height: 89px;
+  padding: 0 30px;
   margin: 0 auto;
 `;
