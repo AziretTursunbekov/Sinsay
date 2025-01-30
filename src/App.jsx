@@ -1,10 +1,4 @@
-import CartList from "./components/UI/CartList";
-
 const App = () => {
-  return (
-    <div>sdsa
-      <CartList />
-    </div>
-  );
+  return <div></div>;
 };
 export default App;

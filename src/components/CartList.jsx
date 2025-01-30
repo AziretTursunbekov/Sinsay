@@ -174,6 +174,7 @@ const StyledLi = styled.li`
     }
   }
   .svg {
+    cursor: pointer;
     width: 50px;
     height: 50px;
   }
