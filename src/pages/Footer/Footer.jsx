@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Icons } from "../../assets";
-import Button from "../UI/Button";
+import Button from "../../components/UI/Button";
 
 const Footer = () => {
   return (
@@ -51,7 +51,7 @@ const Footer = () => {
 
 export default Footer;
 const FooterStyled = styled.footer`
-  width: 1280px;
+  width: 100%;
   height: 360px;
   background-color: #cfc9cb;
   font-weight: 400px;

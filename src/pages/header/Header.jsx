@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Icons } from "../assets";
+import { Icons } from "../../assets";
 
 export default function Header() {
   return (
@@ -71,8 +71,8 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid;
-  width: 80%;
+  width: 100%;
   height: 89px;
-  padding: 0 20px;
+  padding: 0 30px;
   margin: 0 auto;
 `;
