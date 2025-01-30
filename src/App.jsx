@@ -1,12 +1,13 @@
 import React from "react";
-import Slider from "./Slider";
+import Header from "./header/Header";
+import { Slider } from "./header/Slider";
 
 const App = () => {
   return (
     <div>
+      <Header />
       <Slider />
     </div>
   );
 };
-
 export default App;
