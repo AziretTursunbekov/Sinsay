@@ -1,10 +1,4 @@
-import Login from "./auth/Login";
-
 const App = () => {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
+  return <div></div>;
 };
 export default App;
