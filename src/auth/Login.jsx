@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export default function Login() {
   return (
@@ -28,7 +28,6 @@ const StyledBigContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
 `;
 
 const StyledForm = styled.form`
@@ -68,4 +67,3 @@ const StyledButton = styled.button`
   border: none;
   margin-top: 15px;
 `;
-

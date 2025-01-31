@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { product } from "./constants";
+import { Icons } from "./assets";
 
 export default function WishList() {
   return (
@@ -15,11 +16,13 @@ export default function WishList() {
 
               <PriceContainer>
                 <h3>{item.price}</h3>
+                <Icons.likeblack />
               </PriceContainer>
 
               <Button>Add to cart</Button>
 
               <DeleteContainer>
+                <Icons.Delete />
                 <Delete>Delete</Delete>
               </DeleteContainer>
             </StyledArticle>
@@ -33,11 +36,13 @@ export default function WishList() {
 
               <PriceContainer>
                 <h3>{item.price}</h3>
+                <Icons.likeblack />
               </PriceContainer>
 
               <Button>Add to cart</Button>
 
               <DeleteContainer>
+                <Icons.Delete />
                 <Delete>Delete</Delete>
               </DeleteContainer>
             </StyledArticle>
