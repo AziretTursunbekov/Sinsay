@@ -1,31 +1,70 @@
-import face1 from "./assets/images/face1.jpg";
-import face2 from "./assets/images/face2.jpg";
-import face3 from "./assets/images/face3.jpg";
-import cream2 from "./assets/images/cream2.jpg";
-import cream4 from "./assets/images/cream4.jpg";
-import cream5 from "./assets/images/cream5.jpg";
-import cream10 from "./assets/images/cream10.jpg";
-import cream11 from "./assets/images/cream11.jpg";
-import cream12 from "./assets/images/cream12.jpg";
-import cream15 from "./assets/images/cream15.jpg";
-import cream17 from "./assets/images/cream17.jpg";
+import face1 from "../assets/images/face1.jpg";
+import face2 from "../assets/images/face2.jpg";
+import face3 from "../assets/images/face3.jpg";
+import cream2 from "../assets/images/cream2.jpg";
+import cream4 from "../assets/images/cream4.jpg";
+import cream5 from "../assets/images/cream5.jpg";
+import cream10 from "../assets/images/cream10.jpg";
+import cream11 from "../assets/images/cream11.jpg";
+import cream12 from "../assets/images/cream12.jpg";
+import cream15 from "../assets/images/cream15.jpg";
+import cream17 from "../assets/images/cream17.jpg";
+import green from "../assets/images/green.jpg";
+import bronze from "../assets/images/bronze.jpg";
+import silver from "../assets/images/silver.jpg";
+import gold from "../assets/images/gold.jpg";
+import cream1 from "../assets/images/cream1.jpg";
+import cream3 from "../assets/images/cream3.jpg";
 
-import green from "./assets/images/green.jpg";
+import cream6 from "../assets/images/cream6.jpg";
+import icon from "../assets/images/icon.jpg";
+import cream7 from "../assets/images/cream7.jpg";
+import greenSpray from "../assets/images/greenSpray.png";
+import whiteCream from "../assets/images/whiteCream.png";
 
-import bronze from "./assets/images/bronze.jpg";
+export const product = [
+  {
+    id: 1,
+    description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
+    price: "$19.50",
+    image: whiteCream,
+  },
 
-import silver from "./assets/images/silver.jpg";
+  {
+    id: 2,
+    description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
+    price: "$19.50",
+    image: greenSpray,
+  },
 
-import gold from "./assets/images/gold.jpg";
+  {
+    id: 3,
+    description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
+    price: "$19.50",
+    image: whiteCream,
+  },
 
-import cream1 from "./assets/images/cream1.jpg";
+  {
+    id: 4,
+    description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
+    price: "$19.50",
+    image: greenSpray,
+  },
 
-import cream3 from "./assets/images/cream3.jpg";
+  {
+    id: 5,
+    description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
+    price: "$19.50",
+    image: whiteCream,
+  },
 
-import cream6 from "./assets/images/cream6.jpg";
-import icon from "./assets/images/icon.jpg";
-
-import cream7 from "./assets/images/cream7.jpg";
+  {
+    id: 6,
+    description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
+    price: "$19.50",
+    image: greenSpray,
+  },
+];
 
 export const products = [
   {
