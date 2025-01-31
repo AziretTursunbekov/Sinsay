@@ -1,8 +1,8 @@
 import React from "react";
-import { product } from "../../utils/constants";
 import styled from "styled-components";
-import Button from "./Button";
-import { Icons } from "../../assets";
+import { product } from "../utils/constatnts";
+import Button from "./UI/Button";
+import { Icons } from "../assets";
 const CartList = () => {
   return (
     <StyledContainer>

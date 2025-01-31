@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Icons } from "../assets";
-import { products } from "../constatnts";
+
 import Button from "./UI/Button";
+import { products } from "../utils/constatnts";
 
 export const ProductList = () => {
   return (
@@ -44,7 +45,7 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 30px;
