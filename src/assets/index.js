@@ -21,5 +21,5 @@ export const Icons = {
   profile,
   Sumka,
   twiter,
-  instagramm,
+  instagram,
 };
