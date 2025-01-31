@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
-import CartList from "../CartList";
 import { ProductList } from "../ProductList";
 
 export default function Login() {
