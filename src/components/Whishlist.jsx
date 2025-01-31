@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import styled from "styled-components";
 import { carta } from "./constants";
@@ -10,46 +8,22 @@ export const WishList = () => {
     <StyledWishList>
       <StyledTitle>Wish list</StyledTitle>
       <StyledSection>
-        <TopRow>
-          {carta.slice(0, 3).map((item) => (
-            <StyledArticle key={item.id}>
-              <StyledImage src={item.image} alt="img" />
-              <Description>{item.description}</Description>
+        {carta.map((item) => (
+          <StyledArticle>
+            <StyledImage src={item.image} />
+            <p>{item.description}</p>
+            <PriceContainer>
+              <b>{item.price}</b>
+              <Icons.likeblack />
+            </PriceContainer>
+            <Button>Add to cart</Button>
 
-              <PriceContainer>
-                <Icons.likeblack />
-                <h3>{item.price}</h3>
-              </PriceContainer>
-
-              <Button>Add to cart</Button>
-
-              <DeleteContainer>
-                <Icons.Delete />
-                <Delete>Delete</Delete>
-              </DeleteContainer>
-            </StyledArticle>
-          ))}
-        </TopRow>
-        <BottomRow>
-          {carta.slice(3, 6).map((item) => (
-            <StyledArticle key={item.id}>
-              <StyledImage src={item.image} alt="img" />
-              <Description>{item.description}</Description>
-
-              <PriceContainer>
-                <Icons.likeblack />
-                <h3>{item.price}</h3>
-              </PriceContainer>
-
-              <Button>Add to cart</Button>
-
-              <DeleteContainer>
-                <Icons.Delete />
-                <Delete>Delete</Delete>
-              </DeleteContainer>
-            </StyledArticle>
-          ))}
-        </BottomRow>
+            <DeleteContainer>
+              <Icons.Delete />
+              <Delete>Delete</Delete>
+            </DeleteContainer>
+          </StyledArticle>
+        ))}
       </StyledSection>
     </StyledWishList>
   );
@@ -58,7 +32,7 @@ export const WishList = () => {
 const StyledWishList = styled.div`
   font-family: "Roboto", sans-serif;
   width: 1250px;
-  padding: 40px 20px;
+  padding: 90px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,36 +40,31 @@ const StyledWishList = styled.div`
 `;
 
 const StyledTitle = styled.h1`
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const StyledSection = styled.section`
+  justify-content: center;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const TopRow = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-`;
-
-const BottomRow = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 28px;
 `;
 
 const StyledArticle = styled.article`
   text-align: center;
+  flex-direction: column;
+  width: 300px;
   transition: transform 0.2s;
 `;
 
 const StyledImage = styled.img`
+  width: 313px;
+  height: 318px;
+  object-fit: cover;
   transition: transform 0.2s, filter 0.2s;
 
   &:hover {
@@ -108,11 +77,6 @@ const PriceContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px 10px;
-`;
-
-const Description = styled.p`
-  font-size: x-large;
-  padding: 10px;
 `;
 
 const Button = styled.button`
