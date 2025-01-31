@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Leaves from "../../assets/images/leaves.png";
 import Creams from "../../assets/images/creams.png";
 import styled from "styled-components";
+import Cream from "../../assets/images/cream.png";
+import { Icons } from "../../assets";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <article>
       <FirstBox>
         <div className="f_box">
           <h1>ABOUT SINSEY</h1>
         </div>
-        <div className="box">
+        <div
+          className="box"
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <p>
             I wanted to create a radical new skincare brand. For too long, the
             world of skincare had been defined by exaggerated promises and
@@ -31,7 +44,12 @@ const About = () => {
         </div>
       </FirstBox>
       <SecondBox>
-        <div className="container">
+        <div
+          className="container"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <h1>OUR FORMULATIONS</h1>
           <div className="s_box">
             <p>
@@ -60,6 +78,52 @@ const About = () => {
         </div>
         <img className="image" src={Creams} alt="" />
       </SecondBox>
+      <ThirdBox>
+        <img className="image" src={Cream} alt="" />
+        <div
+          className="cont"
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
+          <h1>OUR FORMULATIONS</h1>
+          <div className="s_box">
+            <p>
+              Our philosophy is not to add anything to our products to make them
+              stand out; instead we pare them back and distil each formula down
+              to the most-essential, natural active ingredients.
+            </p>
+            <span>
+              We're tireless in our mission to hunt down the best
+              ingredients.Whether in France, around Europe or further afield in
+              search of exotic extracts, they must be sourced from sustainable
+              farms using gentle extraction techniques.
+            </span>
+            <span>
+              Our formulas are simple, considered and effective. Provenance is
+              important to us, so you'll always know where our ingredients come
+              from. And we'll even show you how to create your own skincare
+              formulations along the way.
+            </span>
+            <span>
+              All formulations are 100% French. Our partner laboratories in
+              Bergerac, Aix en Provence and Compiègne work with us to put their
+              French skincare heritage to good use.
+            </span>
+          </div>
+        </div>
+      </ThirdBox>
+      <FourthBox>
+        <p>
+          We investigate the right ingredients for each skin typology. Our
+          formulations are concise, concentrated, and made in France.
+        </p>
+        <div>
+          <Icons.F_icon />
+          <Icons.Two_f_icon />
+          <Icons.F_icon />
+        </div>
+      </FourthBox>
     </article>
   );
 };
@@ -69,12 +133,13 @@ const FirstBox = styled.div`
   background-image: url(${Leaves});
   background-repeat: no-repeat;
   background-size: 100% 100vh;
-  width: 100%;
+  width: 90%;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 60px;
+  margin: 0 auto;
   .f_box {
     height: 70vh;
     h1 {
@@ -102,9 +167,8 @@ const FirstBox = styled.div`
 const SecondBox = styled.div`
   display: flex;
   justify-content: flex-end;
-  gap: 70px;
-  padding: 10px 50px;
-  align-items: center;
+  gap: 80px;
+  padding: 0 76px;
   .container {
     display: flex;
     flex-direction: column;
@@ -136,5 +200,55 @@ const SecondBox = styled.div`
     width: 650px;
     height: 940px;
     object-fit: cover;
+  }
+`;
+const ThirdBox = styled.div`
+  display: flex;
+  gap: 44px;
+  justify-content: center;
+  height: 808px;
+  .cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    h1 {
+      font-size: 47px;
+      font-weight: 500;
+    }
+    .s_box {
+      width: 454px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p,
+      span {
+        font-size: 21px;
+        font-weight: 500;
+      }
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+`;
+const FourthBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 62px;
+  margin-top: 70px;
+  p {
+    font-size: 27px;
+    font-weight: 400;
+    width: 589px;
+    text-align: center;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 200px;
   }
 `;
