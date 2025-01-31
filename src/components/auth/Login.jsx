@@ -10,14 +10,6 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(!false);
-  };
-  if (open) {
-    return <ProductList />;
-  }
 
   const validateEmail = (email) => {
     const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -108,9 +100,7 @@ export default function Login() {
         </StyledContainer>
 
         <StyledForgot>Forgot your password</StyledForgot>
-        <StyledButton onClick={handleClick} type="submit">
-          Sign in
-        </StyledButton>
+        <StyledButton type="submit">Sign in</StyledButton>
       </StyledForm>
     </StyledBigContainer>
   );
@@ -134,7 +124,7 @@ const StyledForm = styled.form`
 `;
 
 const StyledContainer = styled.div`
-  height: 100px;
+  height: 125px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -142,8 +132,8 @@ const StyledContainer = styled.div`
 `;
 
 const StyledInput = styled.input`
-  width: 100%;
-  height: 50px;
+  width: 542px;
+  height: 80px;
   font-size: large;
   padding-left: 15px;
   border: 1px solid #ccc;
@@ -163,17 +153,17 @@ const TogglePasswordButton = styled.button`
   border: none;
   cursor: pointer;
   font-size: medium;
-  color: blue;
+  color: black;
   .IoEyeSharp {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
   }
 `;
 
 const StyledForgot = styled.p`
   font-size: larger;
   cursor: pointer;
-  color: blue;
+  color: black;
 `;
 
 const StyledButton = styled.button`
