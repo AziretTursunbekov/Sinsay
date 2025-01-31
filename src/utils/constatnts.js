@@ -1,6 +1,7 @@
 import face1 from "../assets/images/face1.jpg";
 import face2 from "../assets/images/face2.jpg";
 import face3 from "../assets/images/face3.jpg";
+import cream1 from "../assets/images/cream1.jpg";
 import cream2 from "../assets/images/cream2.jpg";
 import cream3 from "../assets/images/cream3.jpg";
 import cream4 from "../assets/images/cream4.jpg";
@@ -11,12 +12,11 @@ import cream10 from "../assets/images/cream10.jpg";
 import cream11 from "../assets/images/cream11.jpg";
 import cream12 from "../assets/images/cream12.jpg";
 import cream15 from "../assets/images/cream15.jpg";
-import cream17 from "../assets/images/cream17.jpg";
+import cream16 from "../assets/images/cream17.jpg";
 import green from "../assets/images/green.jpg";
 import bronze from "../assets/images/bronze.jpg";
 import silver from "../assets/images/silver.jpg";
 import gold from "../assets/images/gold.jpg";
-import cream1 from "../assets/images/cream1.jpg";
 import icon from "../assets/images/icon.jpg";
 import greenSpray from "../assets/images/greenSpray.png";
 import whiteCream from "../assets/images/whiteCream.png";
@@ -152,7 +152,7 @@ export const products = [
         id: 12,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
         price: "$5.00",
-        image: cream17,
+        image: cream16,
       },
     ],
   },
