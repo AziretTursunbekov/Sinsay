@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { carta } from "./constants";
 import { Icons } from "../assets";
+import { carta } from "../utils/constatnts";
 
 export const WishList = () => {
   return (
