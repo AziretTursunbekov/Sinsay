@@ -7,15 +7,14 @@ import { ProductList } from "../components/ProductList";
 import styled from "styled-components";
 import Header from "../pages/header/Header";
 import CartList from "../components/CartList";
-import { WishList } from "../components/Whishlist";
 import About from "../pages/about/About";
+import WishList from "../components/Whishlist";
 
 const Layout = () => {
   const { isLoggedIn } = useContext(AuthContext);
   return (
     <div>
       <Header />
-
       <StyledCono>
         {isLoggedIn === "/" ? (
           <ProductList />
