@@ -9,24 +9,15 @@ import cream11 from "./assets/images/cream11.jpg";
 import cream12 from "./assets/images/cream12.jpg";
 import cream15 from "./assets/images/cream15.jpg";
 import cream17 from "./assets/images/cream17.jpg";
-
 import green from "./assets/images/green.jpg";
-
 import bronze from "./assets/images/bronze.jpg";
-
 import silver from "./assets/images/silver.jpg";
-
 import gold from "./assets/images/gold.jpg";
-
 import cream1 from "./assets/images/cream1.jpg";
-
 import cream3 from "./assets/images/cream3.jpg";
-
 import cream6 from "./assets/images/cream6.jpg";
 import icon from "./assets/images/icon.jpg";
-
 import cream7 from "./assets/images/cream7.jpg";
-
 export const products = [
   {
     category: "Face care",

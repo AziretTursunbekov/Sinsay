@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import Header from "../pages/header/Header";
-import { MainPage } from "../pages/MainPage";
-import { OrderPage } from "../pages/OrderPage";
-import { FavoritePage } from "../pages/FavoritePage";
-import CartList from "../components/CartList";
+// import { MainPage } from "../pages/MainPage";
+// import { OrderPage } from "../pages/OrderPage";
+// import { FavoritePage } from "../pages/FavoritePage";
 import Footer from "../pages/Footer/Footer";
+import Login from "../components/auth/Login";
+// import About from "../pages/about/About";
+import { AuthContext } from "../logincontext/LoginContext";
+import { ProductList } from "../components/ProductList";
 
 const Layout = () => {
   const { isLoggedIn } = useContext(AuthContext);
@@ -12,17 +15,7 @@ const Layout = () => {
     <div>
       <Header />
       <StyledCono>
-        {isLoggedIn === "/" ? (
-          <MainPage />
-        ) : isLoggedIn === "cart" ? (
-          <OrderPage />
-        ) : isLoggedIn === "favorite" ? (
-          <FavoritePage />
-        ) : isLoggedIn == "about" ? (
-          <CartList />
-        ) : (
-          <Login />
-        )}
+        {isLoggedIn === "/" ? <ProductList /> : <Login />}
         <Footer />
       </StyledCono>
     </div>

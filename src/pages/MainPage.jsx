@@ -1,20 +1,20 @@
 import { useContext } from "react";
-import Banner from "../components/Banner";
-import { ProductsList } from "../components/UI/ProductsList";
+// import Banner from "../components/Banner";
+// import { ProductsList } from "../components/UI/ProductsList";
 import styled from "styled-components";
 import { ProductContext } from "../logincontext/ProductContext";
 import { Icons } from "../assets";
+import { ProductList } from "../components/ProductList";
 
 export const MainPage = () => {
   const { products } = useContext(ProductContext);
   return (
     <div>
-      <Banner />
       <StyledDiving>
         <h1>
-          Face care <Icons.Twitter />
+          Face care <Icons.twiter />
         </h1>
-        <ProductsList products={products} />
+        <ProductList products={products} />
       </StyledDiving>
     </div>
   );

@@ -1,4 +1,6 @@
-import { CartList } from "../components/carts/CartList";
+
+
+import CartList from "../components/CartList";
 
 export const OrderPage = () => {
   return (

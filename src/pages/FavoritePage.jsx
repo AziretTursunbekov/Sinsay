@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { ProductsList } from "../components/UI/ProductsList";
 import { useContext } from "react";
-import { ProductContext } from "../logincontext/ProductContext";
+import styled from "styled-components";
+import { ProductList } from "../components/ProductList";
+
 
 export const FavoritePage = () => {
   const { products } = useContext(ProductContext);
@@ -10,7 +10,7 @@ export const FavoritePage = () => {
   return (
     <StyledContainer>
       <Title>Wish list</Title>
-      <ProductsList products={favoriteProducts} />
+      <ProductList products={favoriteProducts} />
     </StyledContainer>
   );
 };
