@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../logincontext/LoginContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,9 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const { setIsLoggedIn } = useContext(AuthContext);
+
+
 
   const validateEmail = (email) => {
     const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -52,6 +56,7 @@ export default function Login() {
     }
 
     localStorage.setItem("auth", JSON.stringify({ email, password }));
+    setIsLoggedIn("/");
 
     setEmail("");
     setPassword("");

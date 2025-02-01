@@ -5,7 +5,8 @@ export const AuthContext = createContext();
 export const LoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState("signin");
   useEffect(() => {
-    const saveUserData = JSON.parse(localStorage.getItem("userData")) || {};
+    const saveUserData = JSON.parse(localStorage.getItem("auth")) || {};
+    console.log("saveUserData: ", saveUserData);
     if (saveUserData?.email && saveUserData?.password) {
       setIsLoggedIn("/");
     }
@@ -16,7 +17,3 @@ export const LoginProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-// export const useAuth = () => {
-//   return useContext(AuthContext);
-// };
