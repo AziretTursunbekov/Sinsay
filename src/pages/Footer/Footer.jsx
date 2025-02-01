@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { Icons } from "../../assets";
 import Button from "../../components/UI/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../context/LoginContext";
 
 const Footer = () => {
+  const { setIsLoggedIn } = useContext(AuthContext);
   return (
     <FooterStyled>
       <ArticleStyled>
@@ -22,7 +25,11 @@ const Footer = () => {
       </ArticleStyled>
       <ArticleStyled2>
         <p className="Ptag_1Art2">Shop</p>
-        <a href="#" className="Ptag_2Art2">
+        <a
+          href="#"
+          className="Ptag_2Art2"
+          onClick={() => setIsLoggedIn("about")}
+        >
           About
         </a>
         <a href="#" className="Ptag_2Art2">

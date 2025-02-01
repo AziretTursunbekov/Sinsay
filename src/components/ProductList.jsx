@@ -2,8 +2,11 @@ import styled from "styled-components";
 import { Icons } from "../assets";
 import Button from "./UI/Button";
 import { products } from "../utils/constatnts";
+import { useContext } from "react";
 
 export const ProductList = () => {
+  // const { products } = useContext(ProductContext);
+
   return (
     <Container>
       {products.map((category) => (

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Icons } from "../../assets";
+import { AuthContext } from "../../context/LoginContext";
 
 export default function Header() {
+  const { setIsLoggedIn } = useContext(AuthContext);
+
   return (
     <StyledHeader>
-      <Icons.menuburger />
+      <Icons.menuburger onClick={() => setIsLoggedIn("/")} />
       <AnimatedHeading className="svgclogo">
         {"SINSAY".split("").map((letter, index) => (
           <AnimatedLetter key={index} delay={index * 0.5}>
@@ -16,8 +19,8 @@ export default function Header() {
       <StyledMan>
         <Icons.Poisk />
         <Icons.profile />
-        <Icons.like />
-        <Icons.Sumka />
+        <Icons.like onClick={() => setIsLoggedIn("like")} />
+        <Icons.Sumka onClick={() => setIsLoggedIn("sumka")} />
       </StyledMan>
     </StyledHeader>
   );
