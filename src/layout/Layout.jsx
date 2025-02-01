@@ -16,9 +16,6 @@ const Layout = () => {
     <div>
       <Header />
 
-
-
-      
       <StyledCono>
         {isLoggedIn === "/" ? (
           <ProductList />

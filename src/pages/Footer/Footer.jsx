@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import { Icons } from "../../assets";
 import Button from "../../components/UI/Button";
+import { useContext } from "react";
+import { AuthContext } from "../../context/LoginContext";
 
 const Footer = () => {
+  const { setIsLoggedIn } = useContext(AuthContext);
   return (
     <FooterStyled>
       <ArticleStyled>
