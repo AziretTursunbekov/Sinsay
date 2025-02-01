@@ -25,7 +25,7 @@ const CartList = () => {
               <StyledLi>
                 <div className="div">
                   <img src={item.image} alt="" />
-                  <StyledP>{item.title}</StyledP>
+                  <StyledP>{item.description}</StyledP>
                   <div>
                     <div>
                       <StyledPriceDiv>
@@ -171,6 +171,7 @@ const StyledLi = styled.li`
       width: 164px;
       height: 157px;
       object-fit: cover;
+      border: 1px solid;
     }
   }
   .svg {

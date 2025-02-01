@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Icons } from "../assets";
-
 import Button from "./UI/Button";
 import { products } from "../utils/constatnts";
 
@@ -33,7 +32,6 @@ export const ProductList = () => {
     </Container>
   );
 };
-
 const Sdabi = styled.div`
   display: flex;
   align-items: center;
