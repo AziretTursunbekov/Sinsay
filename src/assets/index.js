@@ -9,7 +9,8 @@ import profile from "./icons/profile.svg?react";
 import Sumka from "./icons/Sumka.svg?react";
 import twiter from "./icons/twiter.svg?react";
 import instagramm from "./icons/uil_instagram.svg?react";
-
+import F_icon from "./icons/f-Icon.svg?react";
+import Two_f_icon from "./icons/two-f-icon.svg?react";
 export const Icons = {
   Delete,
   iconoir_facebook,
@@ -22,4 +23,6 @@ export const Icons = {
   Sumka,
   twiter,
   instagramm,
+  F_icon,
+  Two_f_icon,
 };
