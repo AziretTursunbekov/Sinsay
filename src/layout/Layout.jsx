@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
-import Header from "../pages/header/Header";
 import Footer from "../pages/Footer/Footer";
 import Login from "../components/auth/Login";
-import { AuthContext } from "../logincontext/LoginContext";
+import { AuthContext } from "../context/LoginContext";
 import { ProductList } from "../components/ProductList";
 
-import Slider from "../components/Slider";
 import styled from "styled-components";
+import Header from "../pages/header/Header";
+import CartList from "../components/CartList";
+import { WishList } from "../components/Whishlist";
+import About from "../pages/about/About";
 
 const Layout = () => {
   const { isLoggedIn } = useContext(AuthContext);
@@ -14,8 +16,18 @@ const Layout = () => {
     <div>
       <Header />
       <StyledCono>
-        {isLoggedIn === "/" ? <ProductList /> : <Login />}
-        {((<Header />), (<Slider />), (<ProductList />))}
+        {isLoggedIn === "/" ? (
+          <ProductList />
+        ) : isLoggedIn === "like" ? (
+          <WishList />
+        ) : isLoggedIn === "sumka" ? (
+          <CartList />
+        ) : isLoggedIn === "about" ? (
+          <About />
+        ) : (
+          <Login />
+        )}
+
         <Footer />
       </StyledCono>
     </div>

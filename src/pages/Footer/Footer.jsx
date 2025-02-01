@@ -22,7 +22,11 @@ const Footer = () => {
       </ArticleStyled>
       <ArticleStyled2>
         <p className="Ptag_1Art2">Shop</p>
-        <a href="#" className="Ptag_2Art2">
+        <a
+          href="#"
+          className="Ptag_2Art2"
+          onClick={() => setIsLoggedIn("about")}
+        >
           About
         </a>
         <a href="#" className="Ptag_2Art2">

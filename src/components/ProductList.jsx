@@ -5,7 +5,7 @@ import { products } from "../utils/constatnts";
 import { useContext } from "react";
 
 export const ProductList = () => {
-  const { products } = useContext(ProductContext);
+  // const { products } = useContext(ProductContext);
 
   return (
     <Container>
