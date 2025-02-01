@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import Header from "../pages/header/Header";
-// import { MainPage } from "../pages/MainPage";
-// import { OrderPage } from "../pages/OrderPage";
-// import { FavoritePage } from "../pages/FavoritePage";
+// import { MainPage } from "../pages/MainP
 import Footer from "../pages/Footer/Footer";
 import Login from "../components/auth/Login";
-// import About from "../pages/about/About";
 import { AuthContext } from "../logincontext/LoginContext";
 import { ProductList } from "../components/ProductList";
 
