@@ -8,10 +8,7 @@ export const ProductList = () => {
   return (
     <Container>
       {products.map((category) => (
-        <div
-          key={category.category}
-          style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >
+        <Slider key={category.category}>
           <CategoryTitle>{category.category}</CategoryTitle>
           <Grid>
             {category.items.map((item) => (
@@ -28,7 +25,7 @@ export const ProductList = () => {
               </Card>
             ))}
           </Grid>
-        </div>
+        </Slider>
       ))}
     </Container>
   );
@@ -114,4 +111,9 @@ const Price = styled.p`
   font-size: 14px;
   color: #000000;
   font-weight: 700;
+`;
+const Slider = styled.div`
+  display: "flex";
+  flex-direction: "column";
+  gap: "10px";
 `;

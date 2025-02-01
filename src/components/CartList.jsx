@@ -29,13 +29,13 @@ const CartList = () => {
                   <div>
                     <div>
                       <StyledPriceDiv>
-                        <StyledSpan1>${item.price}</StyledSpan1>
+                        <StyledSpan1>{item.price}</StyledSpan1>
                         <StyledContainerDiv>
                           <StyledCounterButton>-</StyledCounterButton>
                           <b>1</b>
                           <StyledCounterButton>+</StyledCounterButton>
                         </StyledContainerDiv>
-                        <StyledSpan2>${item.price}</StyledSpan2>
+                        <StyledSpan2>{item.price}</StyledSpan2>
                       </StyledPriceDiv>
                     </div>
                   </div>
