@@ -1,4 +1,10 @@
+import { Main } from "./Layout/Main";
+
 const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Main />
+    </div>
+  );
 };
 export default App;
