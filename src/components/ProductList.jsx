@@ -1,40 +1,57 @@
 import styled from "styled-components";
 import { Icons } from "../assets";
 import Button from "./UI/Button";
-import { products } from "../utils/constatnts";
+import { useCart } from "../context/CartContext";
+import { PRODUCTS } from "../utils/constatnts";
 import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 
 export const ProductList = () => {
-  // const { products } = useContext(ProductContext);
+  const { dispatch } = useCart();
+  const { toggleFavorite, favorites } = useContext(ProductContext);
 
   return (
     <Container>
-      {products.map((category) => (
+      {PRODUCTS.map((category) => (
         <div
           key={category.category}
           style={{ display: "flex", flexDirection: "column", gap: "10px" }}
         >
           <CategoryTitle>{category.category}</CategoryTitle>
           <Grid>
-            {category.items.map((item) => (
-              <Card key={item.id}>
-                <Image src={item.image} alt={item.name} />
-                <Name>{item.name}</Name>
-                <Sdabi>
-                  <Price>{item.price}</Price>
-                  <Icons.like />
-                </Sdabi>
-                <Button variant={"contained"} className="button">
-                  Add to cart
-                </Button>
-              </Card>
-            ))}
+            {category.items.map((item) => {
+              const isFavorite = favorites.some((fav) => fav.id === item.id);
+              return (
+                <Card key={item.id}>
+                  <Image src={item.image} alt={item.name} />
+                  <Name>{item.name}</Name>
+                  <Sdabi>
+                    <Price>${item.price}</Price>
+                    {isFavorite ? (
+                      <Icons.likeblack onClick={() => toggleFavorite(item)} />
+                    ) : (
+                      <Icons.like onClick={() => toggleFavorite(item)} />
+                    )}
+                  </Sdabi>
+                  <Button
+                    variant="contained"
+                    className="button"
+                    onClick={() =>
+                      dispatch({ type: "ADD_TO_CART", payload: item })
+                    }
+                  >
+                    Add to cart
+                  </Button>
+                </Card>
+              );
+            })}
           </Grid>
         </div>
       ))}
     </Container>
   );
 };
+
 const Sdabi = styled.div`
   display: flex;
   align-items: center;

@@ -20,81 +20,84 @@ import gold from "../assets/images/gold.jpg";
 import icon from "../assets/images/icon.jpg";
 import greenSpray from "../assets/images/greenSpray.png";
 import whiteCream from "../assets/images/whiteCream.png";
+import { FaV } from "react-icons/fa6";
 
 export const product = [
   {
     id: 1,
     description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-    price: "19.50",
+    price: 19.5,
     image: whiteCream,
   },
 
   {
     id: 2,
     description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
-    price: "19.50",
+    price: 19.5,
     image: greenSpray,
   },
 
   {
     id: 3,
     description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-    price: "19.50",
+    price: 19.5,
     image: whiteCream,
   },
 
   {
     id: 4,
     description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
-    price: "19.50",
+    price: 19.5,
     image: greenSpray,
   },
 
   {
     id: 5,
     description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-    price: "19.50",
+    price: 19.5,
     image: whiteCream,
   },
 
   {
     id: 6,
     description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: greenSpray,
   },
 ];
 
-export const products = [
+export const PRODUCTS = [
   {
     category: "Face care",
     items: [
       {
         id: 1,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$19.50",
+        price: 19.5,
         image: green,
+        favorite: false,
       },
       {
         id: 2,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-
-        price: "$20.00",
+        price: 20,
         image: face1,
+        favorite: false,
       },
       {
         id: 3,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-
-        price: "$15.90",
+        price: 15.9,
         image: face2,
+        favorite: false,
       },
       {
         id: 4,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
 
-        price: "$10.00",
+        price: 10,
         image: face3,
+        favorite: false,
       },
     ],
   },
@@ -104,26 +107,30 @@ export const products = [
       {
         id: 5,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$17.00",
+        price: 17,
         image: cream4,
+        favorite: false,
       },
       {
         id: 6,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$24.00",
+        price: 24,
         image: cream2,
+        favorite: false,
       },
       {
         id: 7,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$30.00",
+        price: 30,
         image: cream5,
+        favorite: false,
       },
       {
         id: 8,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$19.00",
+        price: 19,
         image: cream10,
+        favorite: false,
       },
     ],
   },
@@ -133,26 +140,30 @@ export const products = [
       {
         id: 9,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$12.00",
+        price: 12,
         image: cream11,
+        favorite: false,
       },
       {
         id: 10,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$11.00",
+        price: 11,
         image: cream12,
+        favorite: false,
       },
       {
         id: 11,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$7.00",
+        price: 7,
         image: cream15,
+        favorite: false,
       },
       {
         id: 12,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$5.00",
+        price: 5,
         image: cream16,
+        favorite: false,
       },
     ],
   },
@@ -162,26 +173,30 @@ export const products = [
       {
         id: 13,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$18.00",
+        price: 18,
         image: bronze,
+        favorite: false,
       },
       {
         id: 14,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$13.00",
+        price: 13,
         image: silver,
+        favorite: false,
       },
       {
         id: 15,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$16.00",
+        price: 16,
         image: gold,
+        favorite: false,
       },
       {
         id: 16,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$23.00",
+        price: 23.0,
         image: icon,
+        favorite: false,
       },
     ],
   },
@@ -191,26 +206,30 @@ export const products = [
       {
         id: 17,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$8.00",
+        price: 8.0,
         image: cream3,
+        favorite: false,
       },
       {
         id: 18,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$3.00",
+        price: 3.0,
         image: cream6,
+        favorite: false,
       },
       {
         id: 19,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$4.00",
+        price: 4.0,
         image: cream1,
+        favorite: false,
       },
       {
         id: 20,
         name: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-        price: "$45.00",
+        price: 47.0,
         image: cream7,
+        favorite: false,
       },
     ],
   },
@@ -225,42 +244,42 @@ export const carta = [
   {
     id: 1,
     description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: whiteCream,
   },
 
   {
     id: 2,
     description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: greenSpray,
   },
 
   {
     id: 3,
     description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: whiteCream,
   },
 
   {
     id: 4,
     description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: greenSpray,
   },
 
   {
     id: 5,
     description: "PURITO Centella Unscented Recovery Cream 50 ml / 1.7 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: whiteCream,
   },
 
   {
     id: 6,
     description: "PURITO Centella Green Level Buffet Serum 60 ml / 2.0 fl. oz.",
-    price: "$19.50",
+    price: 19.5,
     image: greenSpray,
   },
 ];

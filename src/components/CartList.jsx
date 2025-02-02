@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { product } from "../utils/constatnts";
+import { useCart } from "../context/CartContext";
 import Button from "./UI/Button";
 import { Icons } from "../assets";
+
 const CartList = () => {
+  const { cart, dispatch } = useCart();
+
   return (
     <StyledContainer>
       <StyledCart>Cart</StyledCart>
       <StyledLi>
         <StyledAteg href="#">Product</StyledAteg>
-
         <StyledDivBOOx>
           <div className="firstDiv">
             <StyledAteg href="#">Price</StyledAteg>
@@ -19,35 +21,59 @@ const CartList = () => {
         </StyledDivBOOx>
       </StyledLi>
       <StyledUl>
-        {product.map((item) => (
+        {cart.map((item) => (
           <div key={item.id}>
-            <div>
-              <StyledLi>
-                <div className="div">
-                  <img src={item.image} alt="" />
-                  <StyledP>{item.description}</StyledP>
-                  <div>
-                    <div>
-                      <StyledPriceDiv>
-                        <StyledSpan1>${item.price}</StyledSpan1>
-                        <StyledContainerDiv>
-                          <StyledCounterButton>-</StyledCounterButton>
-                          <b>1</b>
-                          <StyledCounterButton>+</StyledCounterButton>
-                        </StyledContainerDiv>
-                        <StyledSpan2>${item.price}</StyledSpan2>
-                      </StyledPriceDiv>
-                    </div>
-                  </div>
-                </div>
-                <Icons.Delete className="svg" />
-              </StyledLi>
-            </div>
+            <StyledLi>
+              <div className="div">
+                <img src={item.image} alt="" />
+                <StyledP>{item.name}</StyledP>
+                <StyledPriceDiv>
+                  <StyledSpan1>${item.price}</StyledSpan1>
+                  <StyledContainerDiv>
+                    <StyledCounterButton
+                      onClick={() =>
+                        dispatch({
+                          type: "DECREASE_QUANTITY",
+                          payload: item.id,
+                        })
+                      }
+                    >
+                      -
+                    </StyledCounterButton>
+                    <b>{item.quantity}</b>
+                    <StyledCounterButton
+                      onClick={() =>
+                        dispatch({
+                          type: "INCREASE_QUANTITY",
+                          payload: item.id,
+                        })
+                      }
+                    >
+                      +
+                    </StyledCounterButton>
+                  </StyledContainerDiv>
+                  <StyledSpan2>
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </StyledSpan2>
+                </StyledPriceDiv>
+              </div>
+              <Icons.Delete
+                className="svg"
+                onClick={() =>
+                  dispatch({ type: "REMOVE_FROM_CART", payload: item.id })
+                }
+              />
+            </StyledLi>
           </div>
         ))}
       </StyledUl>
       <StyledSubtotal>
-        <h1>Subtotal: $86.00</h1>
+        <h1>
+          Subtotal: $
+          {cart
+            .reduce((total, item) => total + item.price * item.quantity, 0)
+            .toFixed(2)}
+        </h1>
         <StyledPP>Tax included. Shipping calculated at checkout.</StyledPP>
       </StyledSubtotal>
       <ButtonContainer>
@@ -59,6 +85,7 @@ const CartList = () => {
 };
 
 export default CartList;
+
 const StyledSubtotal = styled.div`
   width: 100%;
   height: 150px;
@@ -69,6 +96,7 @@ const StyledSubtotal = styled.div`
   gap: 8px;
   padding: 35px 50px;
 `;
+
 const StyledPriceDiv = styled.div`
   width: 530px;
   display: flex;
@@ -127,7 +155,6 @@ const ButtonContainer = styled.div`
 const StyledPP = styled.p`
   font-size: 20px;
 `;
-
 const StyledContainer = styled.div`
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -152,7 +179,6 @@ const StyledAteg = styled.a`
   font-size: 21px;
   font-weight: 400;
 `;
-
 const StyledLi = styled.li`
   width: 90rem;
   display: flex;

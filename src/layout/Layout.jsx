@@ -9,12 +9,14 @@ import Header from "../pages/header/Header";
 import CartList from "../components/CartList";
 import About from "../pages/about/About";
 import WishList from "../components/Whishlist";
+import { Slider } from "@mui/material";
 
 const Layout = () => {
   const { isLoggedIn } = useContext(AuthContext);
   return (
     <div>
       <Header />
+      <Slider />
       <StyledCono>
         {isLoggedIn === "/" ? (
           <ProductList />

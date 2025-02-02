@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
+import { useContext } from "react";
 import { Icons } from "../../assets";
+import styled from "styled-components";
 import { AuthContext } from "../../context/LoginContext";
+import { useCart } from "../../context/CartContext";
 
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
+  const { cart } = useCart();
 
   return (
     <StyledHeader>
@@ -20,18 +22,41 @@ export default function Header() {
         <Icons.Poisk />
         <Icons.profile />
         <Icons.like onClick={() => setIsLoggedIn("like")} />
-        <Icons.Sumka onClick={() => setIsLoggedIn("sumka")} />
+        <CartIcon onClick={() => setIsLoggedIn("sumka")}>
+          <Icons.Sumka />
+          {cart.length > 0 && <CartCounter>{cart.length}</CartCounter>}
+        </CartIcon>
       </StyledMan>
     </StyledHeader>
   );
 }
+
+const CartIcon = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
+const CartCounter = styled.span`
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const StyledMan = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 50px;
-  align-items: center;
 `;
 
 const AnimatedHeading = styled.h2`
@@ -39,7 +64,6 @@ const AnimatedHeading = styled.h2`
   font-size: 40px;
   font-weight: bold;
   color: black;
-  margin: 0;
 `;
 
 const AnimatedLetter = styled.span`
