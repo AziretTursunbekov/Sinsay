@@ -74,6 +74,7 @@ export default function Login() {
             id="email"
             value={email}
             onChange={handleEmailChange}
+            placeholder="Enter your email here"
           />
           {emailError && <ErrorText>{emailError}</ErrorText>}
         </StyledContainer>
@@ -86,6 +87,7 @@ export default function Login() {
               id="password"
               value={password}
               onChange={handlePasswordChange}
+              placeholder="Enter your password here"
             />
             <TogglePasswordButton
               type="button"

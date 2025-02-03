@@ -52,9 +52,7 @@ const CartList = () => {
                       +
                     </StyledCounterButton>
                   </StyledContainerDiv>
-                  <StyledSpan2>
-                    ${(item.price * item.quantity).toFixed(2)}
-                  </StyledSpan2>
+                  <StyledSpan2>${item.price}</StyledSpan2>
                 </StyledPriceDiv>
               </div>
               <Icons.Delete
@@ -106,7 +104,7 @@ const StyledPriceDiv = styled.div`
 `;
 
 const StyledCounterButton = styled.button`
-  padding: 8px 10px;
+  padding: 5px 5px;
   background-color: #cfc9cb;
   border: none;
   cursor: pointer;
@@ -120,7 +118,6 @@ const StyledContainerDiv = styled.div`
   display: flex;
   justify-content: center;
   gap: 10px;
-  /* margin-top: 100px; */
 `;
 const StyledP = styled.p`
   width: 265px;

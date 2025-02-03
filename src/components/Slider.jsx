@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
-import leaves from "../assets/images/leaves.png";
-import cream from "../assets/images/cream.png";
-import creams from "../assets/images/creams.png";
 import styled from "styled-components";
+import firstSlider from "../assets/images/firstSlider.png";
+import secondSlider from "../assets/images/secondSlider.png";
+import thirdSlider from "../assets/images/thirdSlider.png";
+import fifthSlider from "../assets/images/5th.png";
+import fourthSlider from "../assets/images/4th.png";
 
 const Slider = () => {
-  const banners = [leaves, cream, creams];
+  const banners = [
+    firstSlider,
+    thirdSlider,
+    secondSlider,
+    fifthSlider,
+    fourthSlider,
+  ];
 
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
 
@@ -25,11 +33,9 @@ const Slider = () => {
 };
 
 export default Slider;
-// const StyledDiv = styled.div`
-//   text-align: center;
-// `;
 
 const BannerStyle = styled.img`
   width: 100%;
   height: 100vh;
+  object-fit: cover;
 `;
