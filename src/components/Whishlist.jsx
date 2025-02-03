@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { useProduct } from "../context/ProductContext";
 import styled from "styled-components";
 import { Icons } from "../assets";
 
 export default function WishList() {
-  const { favorites, toggleFavorite } = useContext(ProductContext);
+  const { favorites, toggleFavorite } = useProduct(); // Теперь правильно
 
   return (
     <StyledWishList>
@@ -119,4 +118,11 @@ const StyledButton = styled.button`
     background: gray;
     transform: translateY(-3px);
   }
+`;
+
+const EmptyMessage = styled.p`
+  font-size: 1.5rem;
+  color: gray;
+  text-align: center;
+  margin-top: 20px;
 `;

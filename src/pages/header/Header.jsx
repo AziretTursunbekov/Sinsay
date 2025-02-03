@@ -3,10 +3,12 @@ import { Icons } from "../../assets";
 import styled from "styled-components";
 import { AuthContext } from "../../context/LoginContext";
 import { useCart } from "../../context/CartContext";
+import { useProduct } from "../../context/ProductContext";
 
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
+  const { favorites } = useProduct();
 
   return (
     <StyledHeader>
@@ -40,12 +42,17 @@ export default function Header() {
   );
 }
 
+const LikeIcon = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
 const CartIcon = styled.div`
   position: relative;
   cursor: pointer;
 `;
 
-const CartCounter = styled.span`
+const Counter = styled.span`
   position: absolute;
   top: -5px;
   right: -10px;

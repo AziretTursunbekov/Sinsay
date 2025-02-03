@@ -1,21 +1,42 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useContext } from "react";
 
-export const ProductContext = createContext();
+const ProductContext = createContext();
+
+const initialState = {
+  favorites: [],
+};
+
+const productReducer = (state, action) => {
+  switch (action.type) {
+    case "TOGGLE_FAVORITE":
+      const exists = state.favorites.find(
+        (item) => item.id === action.payload.id
+      );
+      return {
+        ...state,
+        favorites: exists
+          ? state.favorites.filter((item) => item.id !== action.payload.id)
+          : [...state.favorites, action.payload],
+      };
+    default:
+      return state;
+  }
+};
 
 export const ProductProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState([]);
+  const [state, dispatch] = useReducer(productReducer, initialState);
 
-  const toggleFavorite = (product) => {
-    setFavorites((prev) =>
-      prev.some((fav) => fav.id === product.id)
-        ? prev.filter((fav) => fav.id !== product.id)
-        : [...prev, product]
-    );
+  const toggleFavorite = (item) => {
+    dispatch({ type: "TOGGLE_FAVORITE", payload: item });
   };
 
   return (
-    <ProductContext.Provider value={{ favorites, toggleFavorite }}>
+    <ProductContext.Provider
+      value={{ favorites: state.favorites, toggleFavorite }}
+    >
       {children}
     </ProductContext.Provider>
   );
 };
+
+export const useProduct = () => useContext(ProductContext);
