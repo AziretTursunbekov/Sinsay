@@ -11,7 +11,7 @@ export default function Header() {
   const { logout } = useContext(AuthContext);
   const handleLogout = () => {
     logout();
-    navigate("/login"); 
+    navigate("/login");
   };
 
   return (
@@ -45,11 +45,6 @@ export default function Header() {
     </StyledHeader>
   );
 }
-
-const LikeIcon = styled.div`
-  position: relative;
-  cursor: pointer;
-`;
 
 const CartIcon = styled.div`
   position: relative;
