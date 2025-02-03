@@ -133,7 +133,7 @@ const AnimatedLetter = styled.span`
 const StyledHeader = styled.header`
   text-align: center;
   width: 100%;
-  height: 80px;
+  height: 100px;
   position: fixed;
   top: 0;
   display: flex;
@@ -143,5 +143,5 @@ const StyledHeader = styled.header`
   border-bottom: 2px solid;
   padding: 0 30px;
   margin: 0 auto;
-  background-color: #ffff;
+  background-color: rgb(203, 206, 208);
 `;
