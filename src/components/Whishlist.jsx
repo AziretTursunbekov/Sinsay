@@ -38,6 +38,7 @@ const StyledWishList = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-top: 70px;
 `;
 
 const StyledTitle = styled.h1`
