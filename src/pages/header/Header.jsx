@@ -8,12 +8,11 @@ import { useProduct } from "../../context/ProductContext";
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
-  const { logout } = useContext(AuthContext);
+  const { logout, state } = useContext(AuthContext);
 
   const { favorites } = useProduct();
   const handleLogout = () => {
     logout();
-    navigate("/login");
   };
 
   return (
@@ -39,13 +38,21 @@ export default function Header() {
           onClick={() => setIsLoggedIn("like")}
           style={{ cursor: "pointer" }}
         />
-        {favorites.length > 0 && <LikeCounter>{favorites.length}</LikeCounter>}
+        {state ? null : (
+          <>
+            {favorites.length > 0 && (
+              <LikeCounter>{favorites.length}</LikeCounter>
+            )}
+          </>
+        )}
         <CartIcon
           onClick={() => setIsLoggedIn("sumka")}
           style={{ cursor: "pointer" }}
         >
           <Icons.Sumka style={{ cursor: "pointer" }} />
-          {cart.length > 0 && <Counter>{cart.length}</Counter>}
+          {state ? null : (
+            <>{cart.length > 0 && <Counter>{cart.length}</Counter>}</>
+          )}
         </CartIcon>
       </StyledMan>
     </StyledHeader>
@@ -59,7 +66,7 @@ const CartIcon = styled.div`
 
 const LikeCounter = styled.span`
   position: absolute;
-  top: 17px;
+  top: 28px;
   right: 100px;
   background: red;
   color: white;
