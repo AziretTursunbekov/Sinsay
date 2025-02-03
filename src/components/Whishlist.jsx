@@ -16,7 +16,10 @@ export default function WishList() {
             <Description>{item.description}</Description>
             <PriceContainer>
               <Price>${item.price}</Price>
-              <LikeIcon onClick={() => toggleFavorite(item)}>
+              <LikeIcon
+                onClick={() => toggleFavorite(item)}
+                style={{ cursor: "pointer" }}
+              >
                 <Icons.likeblack />
               </LikeIcon>
             </PriceContainer>
