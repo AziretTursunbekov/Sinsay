@@ -94,12 +94,17 @@ const AnimatedLetter = styled.span`
 `;
 
 const StyledHeader = styled.header`
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
   display: flex;
+  z-index: 1;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid;
-  width: 100%;
-  height: 89px;
   padding: 0 30px;
   margin: 0 auto;
+  background-color: #ffff;
 `;

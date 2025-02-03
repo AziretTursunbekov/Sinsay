@@ -25,8 +25,12 @@ const Slider = () => {
 };
 
 export default Slider;
+// const StyledDiv = styled.div`
+//   text-align: center;
+// `;
 
 const BannerStyle = styled.img`
   width: 100%;
   height: 100vh;
+  object-fit: cover;
 `;
