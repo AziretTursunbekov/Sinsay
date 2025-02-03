@@ -7,6 +7,11 @@ import { useCart } from "../../context/CartContext";
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
+  const { logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout();
+    navigate("/login"); 
+  };
 
   return (
     <StyledHeader>
@@ -20,7 +25,7 @@ export default function Header() {
       </AnimatedHeading>
       <StyledMan>
         <Icons.Poisk />
-        <Icons.profile />
+        <Icons.profile onClick={() => handleLogout("auth")} />
         <Icons.like onClick={() => setIsLoggedIn("like")} />
         <CartIcon onClick={() => setIsLoggedIn("sumka")}>
           <Icons.Sumka />
@@ -71,7 +76,7 @@ const AnimatedLetter = styled.span`
   opacity: 0;
   transform: translateX(100%);
   animation: slideIn 4s ease-in-out infinite;
-  animation-delay: ${(props) => props.delay}s;
+  animation-delay: ${(props) => props.delay};
 
   @keyframes slideIn {
     0% {

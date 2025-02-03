@@ -27,6 +27,6 @@ const Slider = () => {
 export default Slider;
 
 const BannerStyle = styled.img`
-  width: 100%;
-  height: 100vh;
+  width: 1280px;
+  height: 845px;
 `;
