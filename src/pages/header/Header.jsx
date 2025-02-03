@@ -8,12 +8,15 @@ import { useProduct } from "../../context/ProductContext";
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
-  const { favorites } = useProduct(); // Получаем список избранных товаров
+  const { favorites } = useProduct();
 
   return (
     <StyledHeader>
-      <Icons.menuburger onClick={() => setIsLoggedIn("/")} />
-      <AnimatedHeading>
+      <Icons.menuburger
+        onClick={() => setIsLoggedIn("/")}
+        style={{ cursor: "pointer" }}
+      />
+      <AnimatedHeading className="svgclogo">
         {"SINSAY".split("").map((letter, index) => (
           <AnimatedLetter key={index} delay={index * 0.5}>
             {letter}
@@ -21,15 +24,18 @@ export default function Header() {
         ))}
       </AnimatedHeading>
       <StyledMan>
-        <Icons.Poisk />
-        <Icons.profile />
-        <LikeIcon onClick={() => setIsLoggedIn("like")}>
-          <Icons.like />
-          {favorites.length > 0 && <Counter>{favorites.length}</Counter>}
-        </LikeIcon>
-        <CartIcon onClick={() => setIsLoggedIn("sumka")}>
-          <Icons.Sumka />
-          {cart.length > 0 && <Counter>{cart.length}</Counter>}
+        <Icons.Poisk style={{ cursor: "pointer" }} />
+        <Icons.profile style={{ cursor: "pointer" }} />
+        <Icons.like
+          onClick={() => setIsLoggedIn("like")}
+          style={{ cursor: "pointer" }}
+        />
+        <CartIcon
+          onClick={() => setIsLoggedIn("sumka")}
+          style={{ cursor: "pointer" }}
+        >
+          <Icons.Sumka style={{ cursor: "pointer" }} />
+          {cart.length > 0 && <CartCounter>{cart.length}</CartCounter>}
         </CartIcon>
       </StyledMan>
     </StyledHeader>
@@ -104,12 +110,17 @@ const AnimatedLetter = styled.span`
 `;
 
 const StyledHeader = styled.header`
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
   display: flex;
+  z-index: 1;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid;
-  width: 100%;
-  height: 89px;
   padding: 0 30px;
   margin: 0 auto;
+  background-color: #ffff;
 `;

@@ -9,23 +9,22 @@ export default function WishList() {
     <StyledWishList>
       <StyledTitle>Wish List</StyledTitle>
       <StyledSection>
-        {favorites.length > 0 ? (
-          favorites.map((item) => (
-            <Article key={item.id}>
-              <Image src={item.image} alt={item.name} />
-              <Description>{item.description}</Description>
-              <PriceContainer>
-                <Price>${item.price}</Price>
-                <LikeIcon onClick={() => toggleFavorite(item)}>
-                  <Icons.likeblack />
-                </LikeIcon>
-              </PriceContainer>
-              <StyledButton>Add to cart</StyledButton>
-            </Article>
-          ))
-        ) : (
-          <EmptyMessage>Your wish list is empty.</EmptyMessage>
-        )}
+        {favorites.map((item) => (
+          <Article key={item.id}>
+            <Image src={item.image} alt={item.name} />
+            <Description>{item.description}</Description>
+            <PriceContainer>
+              <Price>${item.price}</Price>
+              <LikeIcon
+                onClick={() => toggleFavorite(item)}
+                style={{ cursor: "pointer" }}
+              >
+                <Icons.likeblack />
+              </LikeIcon>
+            </PriceContainer>
+            <StyledButton>Add to cart</StyledButton>
+          </Article>
+        ))}
       </StyledSection>
     </StyledWishList>
   );
@@ -38,6 +37,7 @@ const StyledWishList = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-top: 70px;
 `;
 
 const StyledTitle = styled.h1`
