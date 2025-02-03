@@ -10,7 +10,10 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <Icons.menuburger onClick={() => setIsLoggedIn("/")} />
+      <Icons.menuburger
+        onClick={() => setIsLoggedIn("/")}
+        style={{ cursor: "pointer" }}
+      />
       <AnimatedHeading className="svgclogo">
         {"SINSAY".split("").map((letter, index) => (
           <AnimatedLetter key={index} delay={index * 0.5}>
@@ -19,11 +22,17 @@ export default function Header() {
         ))}
       </AnimatedHeading>
       <StyledMan>
-        <Icons.Poisk />
-        <Icons.profile />
-        <Icons.like onClick={() => setIsLoggedIn("like")} />
-        <CartIcon onClick={() => setIsLoggedIn("sumka")}>
-          <Icons.Sumka />
+        <Icons.Poisk style={{ cursor: "pointer" }} />
+        <Icons.profile style={{ cursor: "pointer" }} />
+        <Icons.like
+          onClick={() => setIsLoggedIn("like")}
+          style={{ cursor: "pointer" }}
+        />
+        <CartIcon
+          onClick={() => setIsLoggedIn("sumka")}
+          style={{ cursor: "pointer" }}
+        >
+          <Icons.Sumka style={{ cursor: "pointer" }} />
           {cart.length > 0 && <CartCounter>{cart.length}</CartCounter>}
         </CartIcon>
       </StyledMan>

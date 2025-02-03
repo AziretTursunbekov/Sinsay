@@ -6,11 +6,9 @@ import { PRODUCTS } from "../utils/constatnts";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 import Slider from "./Slider";
-
 export const ProductList = () => {
   const { dispatch } = useCart();
   const { toggleFavorite, favorites } = useContext(ProductContext);
-
   return (
     <div>
       <Slider />

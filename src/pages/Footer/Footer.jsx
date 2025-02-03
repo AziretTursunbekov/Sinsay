@@ -1,11 +1,20 @@
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import { Icons } from "../../assets";
 import Button from "../../components/UI/Button";
-import { useContext } from "react";
 import { AuthContext } from "../../context/LoginContext";
 
 const Footer = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (email.trim()) {
+      console.log("Subscribed with:", email);
+      setEmail(""); // Очищаем инпут после подписки
+    }
+  };
+
   return (
     <FooterStyled>
       <ArticleStyled>
@@ -17,9 +26,9 @@ const Footer = () => {
           <div>10:00 am to 17:00 pm</div>
         </p>
         <SpanStyled>
-          <Icons.twiter />
-          <Icons.iconoir_facebook />
-          <Icons.instagramm />
+          <Icons.twiter style={{ cursor: "pointer" }} />
+          <Icons.iconoir_facebook style={{ cursor: "pointer" }} />
+          <Icons.instagramm style={{ cursor: "pointer" }} />
         </SpanStyled>
         <p className="PTag5">© 2025 SINSEY Official. Powered by Shopify</p>
       </ArticleStyled>
@@ -27,7 +36,7 @@ const Footer = () => {
         <p className="Ptag_1Art2">Shop</p>
         <a
           href="#"
-          className="Ptag_2Art2"
+          className="Ptag_2Art2"ы
           onClick={() => setIsLoggedIn("about")}
         >
           About
@@ -47,8 +56,17 @@ const Footer = () => {
         <p className="ptag3">
           Sign up for exclusive offers, original stories, events and more.
         </p>
-        <input type="text" placeholder="Enter email" />
-        <Button variant={"contained"} className="BtnStyled">
+        <input
+          type="text"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <Button
+          variant={"contained"}
+          className="BtnStyled"
+          onClick={handleSubscribe}
+        >
           Subscribe
         </Button>
       </ArticleStyled3>
@@ -57,6 +75,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 const FooterStyled = styled.footer`
   width: 100%;
   height: 360px;

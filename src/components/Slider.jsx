@@ -32,5 +32,4 @@ export default Slider;
 const BannerStyle = styled.img`
   width: 100%;
   height: 100vh;
-  object-fit: cover;
 `;
