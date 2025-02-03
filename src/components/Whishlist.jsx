@@ -1,28 +1,31 @@
-import { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { useProduct } from "../context/ProductContext";
 import styled from "styled-components";
 import { Icons } from "../assets";
 
 export default function WishList() {
-  const { favorites, toggleFavorite } = useContext(ProductContext);
+  const { favorites, toggleFavorite } = useProduct(); // Теперь правильно
 
   return (
     <StyledWishList>
       <StyledTitle>Wish List</StyledTitle>
       <StyledSection>
-        {favorites.map((item) => (
-          <Article key={item.id}>
-            <Image src={item.image} alt={item.name} />
-            <Description>{item.description}</Description>
-            <PriceContainer>
-              <Price>${item.price}</Price>
-              <LikeIcon onClick={() => toggleFavorite(item)}>
-                <Icons.likeblack />
-              </LikeIcon>
-            </PriceContainer>
-            <StyledButton>Add to cart</StyledButton>
-          </Article>
-        ))}
+        {favorites.length > 0 ? (
+          favorites.map((item) => (
+            <Article key={item.id}>
+              <Image src={item.image} alt={item.name} />
+              <Description>{item.description}</Description>
+              <PriceContainer>
+                <Price>${item.price}</Price>
+                <LikeIcon onClick={() => toggleFavorite(item)}>
+                  <Icons.likeblack />
+                </LikeIcon>
+              </PriceContainer>
+              <StyledButton>Add to cart</StyledButton>
+            </Article>
+          ))
+        ) : (
+          <EmptyMessage>Your wish list is empty.</EmptyMessage>
+        )}
       </StyledSection>
     </StyledWishList>
   );
@@ -115,4 +118,11 @@ const StyledButton = styled.button`
     background: gray;
     transform: translateY(-3px);
   }
+`;
+
+const EmptyMessage = styled.p`
+  font-size: 1.5rem;
+  color: gray;
+  text-align: center;
+  margin-top: 20px;
 `;

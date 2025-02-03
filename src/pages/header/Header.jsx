@@ -3,15 +3,17 @@ import { Icons } from "../../assets";
 import styled from "styled-components";
 import { AuthContext } from "../../context/LoginContext";
 import { useCart } from "../../context/CartContext";
+import { useProduct } from "../../context/ProductContext";
 
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
+  const { favorites } = useProduct(); // Получаем список избранных товаров
 
   return (
     <StyledHeader>
       <Icons.menuburger onClick={() => setIsLoggedIn("/")} />
-      <AnimatedHeading className="svgclogo">
+      <AnimatedHeading>
         {"SINSAY".split("").map((letter, index) => (
           <AnimatedLetter key={index} delay={index * 0.5}>
             {letter}
@@ -21,22 +23,30 @@ export default function Header() {
       <StyledMan>
         <Icons.Poisk />
         <Icons.profile />
-        <Icons.like onClick={() => setIsLoggedIn("like")} />
+        <LikeIcon onClick={() => setIsLoggedIn("like")}>
+          <Icons.like />
+          {favorites.length > 0 && <Counter>{favorites.length}</Counter>}
+        </LikeIcon>
         <CartIcon onClick={() => setIsLoggedIn("sumka")}>
           <Icons.Sumka />
-          {cart.length > 0 && <CartCounter>{cart.length}</CartCounter>}
+          {cart.length > 0 && <Counter>{cart.length}</Counter>}
         </CartIcon>
       </StyledMan>
     </StyledHeader>
   );
 }
 
+const LikeIcon = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
 const CartIcon = styled.div`
   position: relative;
   cursor: pointer;
 `;
 
-const CartCounter = styled.span`
+const Counter = styled.span`
   position: absolute;
   top: -5px;
   right: -10px;
