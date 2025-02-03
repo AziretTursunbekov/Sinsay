@@ -120,8 +120,8 @@ const StyledContainerDiv = styled.div`
   display: flex;
   justify-content: center;
   gap: 10px;
+  /* margin-top: 100px; */
 `;
-
 const StyledP = styled.p`
   width: 265px;
   font-size: 21px;
@@ -161,6 +161,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 18px;
+  margin-top: 90px;
 `;
 
 const StyledCart = styled.p`
