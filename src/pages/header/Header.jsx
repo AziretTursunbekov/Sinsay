@@ -9,6 +9,8 @@ export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
   const { logout } = useContext(AuthContext);
+
+  const { favorites } = useProduct();
   const handleLogout = () => {
     logout();
     navigate("/login");
@@ -16,7 +18,7 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <Icons.menuburger
+      <Icons.Sinsay
         onClick={() => setIsLoggedIn("/")}
         style={{ cursor: "pointer" }}
       />
@@ -29,7 +31,10 @@ export default function Header() {
       </AnimatedHeading>
       <StyledMan>
         <Icons.Poisk style={{ cursor: "pointer" }} />
-        <Icons.profile style={{ cursor: "pointer" }} />
+        <Icons.profile
+          style={{ cursor: "pointer" }}
+          onClick={() => handleLogout()}
+        />
         <Icons.like
           onClick={() => setIsLoggedIn("like")}
           style={{ cursor: "pointer" }}

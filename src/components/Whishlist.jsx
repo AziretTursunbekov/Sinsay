@@ -1,9 +1,12 @@
 import { useProduct } from "../context/ProductContext";
 import styled from "styled-components";
 import { Icons } from "../assets";
+import { useCart } from "../context/CartContext";
 
 export default function WishList() {
-  const { favorites, toggleFavorite } = useProduct(); // Теперь правильно
+  const { favorites, toggleFavorite } = useProduct();
+
+  const { dispatch } = useCart();
 
   return (
     <StyledWishList>
@@ -22,7 +25,11 @@ export default function WishList() {
                 <Icons.likeblack />
               </LikeIcon>
             </PriceContainer>
-            <StyledButton>Add to cart</StyledButton>
+            <StyledButton
+              onClick={() => dispatch({ type: "ADD_TO_CART", payload: item })}
+            >
+              Add to cart
+            </StyledButton>
           </Article>
         ))}
       </StyledSection>

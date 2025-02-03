@@ -11,6 +11,7 @@ import twiter from "./icons/twiter.svg?react";
 import instagramm from "./icons/uil_instagram.svg?react";
 import F_icon from "./icons/f-Icon.svg?react";
 import Two_f_icon from "./icons/two-f-icon.svg?react";
+import Sinsay from "./icons/sinsay.svg?react";
 export const Icons = {
   Delete,
   iconoir_facebook,
@@ -25,4 +26,5 @@ export const Icons = {
   instagramm,
   F_icon,
   Two_f_icon,
+  Sinsay,
 };
