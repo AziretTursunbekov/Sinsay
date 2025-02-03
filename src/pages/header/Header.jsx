@@ -8,7 +8,11 @@ import { useProduct } from "../../context/ProductContext";
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
   const { cart } = useCart();
-  const { favorites } = useProduct();
+  const { logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <StyledHeader>
@@ -99,7 +103,7 @@ const AnimatedLetter = styled.span`
   opacity: 0;
   transform: translateX(100%);
   animation: slideIn 4s ease-in-out infinite;
-  animation-delay: ${(props) => props.delay}s;
+  animation-delay: ${(props) => props.delay};
 
   @keyframes slideIn {
     0% {

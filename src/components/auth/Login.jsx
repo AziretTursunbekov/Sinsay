@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-// import { IoEyeSharp } from "react-icons/io5";
-// import { FaEyeSlash } from "react-icons/fa";
+import { IoEyeSharp } from "react-icons/io5";
+import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../context/LoginContext";
 
 export default function Login() {
@@ -93,14 +93,14 @@ export default function Login() {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {/* {showPassword ? (
+              {showPassword ? (
                 <IoEyeSharp className="IoEyeSharp" />
               ) : (
                 <FaEyeSlash className="IoEyeSharp" />
-              )} */}
+              )}
             </TogglePasswordButton>
           </PasswordWrapper>
-          {/* {passwordError && <ErrorText>{passwordError}</ErrorText>} */}
+          {passwordError && <ErrorText>{passwordError}</ErrorText>}
         </StyledContainer>
 
         <StyledForgot>Forgot your password</StyledForgot>
