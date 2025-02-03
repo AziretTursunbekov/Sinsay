@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { useProduct } from "../context/ProductContext";
 import styled from "styled-components";
 import { Icons } from "../assets";
 
 export default function WishList() {
-  const { favorites, toggleFavorite } = useContext(ProductContext);
+  const { favorites, toggleFavorite } = useProduct(); // Теперь правильно
 
   return (
     <StyledWishList>
@@ -16,7 +15,10 @@ export default function WishList() {
             <Description>{item.description}</Description>
             <PriceContainer>
               <Price>${item.price}</Price>
-              <LikeIcon onClick={() => toggleFavorite(item)}>
+              <LikeIcon
+                onClick={() => toggleFavorite(item)}
+                style={{ cursor: "pointer" }}
+              >
                 <Icons.likeblack />
               </LikeIcon>
             </PriceContainer>
@@ -35,6 +37,7 @@ const StyledWishList = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-top: 70px;
 `;
 
 const StyledTitle = styled.h1`
@@ -115,4 +118,11 @@ const StyledButton = styled.button`
     background: gray;
     transform: translateY(-3px);
   }
+`;
+
+const EmptyMessage = styled.p`
+  font-size: 1.5rem;
+  color: gray;
+  text-align: center;
+  margin-top: 20px;
 `;

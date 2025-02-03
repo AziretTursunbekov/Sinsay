@@ -58,6 +58,7 @@ const Footer = () => {
 
 export default Footer;
 const FooterStyled = styled.footer`
+  margin-top: 150px;
   width: 100%;
   height: 360px;
   background-color: #cfc9cb;

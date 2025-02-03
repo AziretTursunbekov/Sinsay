@@ -15,7 +15,7 @@ const About = () => {
     <article>
       <FirstBox>
         <div className="f_box">
-          <h1>ABOUT SINSEY</h1>
+          <h1>ABOUT SINSAY</h1>
         </div>
         <div
           className="box"

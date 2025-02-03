@@ -2,14 +2,13 @@ import styled from "styled-components";
 import { Icons } from "../assets";
 import Button from "./UI/Button";
 import { useCart } from "../context/CartContext";
-import { PRODUCTS } from "../utils/constatnts";
-import { useContext } from "react";
-import { ProductContext } from "../context/ProductContext";
+import { useProduct } from "../context/ProductContext";
 import Slider from "./Slider";
+import { PRODUCTS } from "../utils/constatnts";
 
 export const ProductList = () => {
   const { dispatch } = useCart();
-  const { toggleFavorite, favorites } = useContext(ProductContext);
+  const { toggleFavorite, favorites } = useProduct();
 
   return (
     <div>

@@ -3,6 +3,7 @@ import { Icons } from "../../assets";
 import styled from "styled-components";
 import { AuthContext } from "../../context/LoginContext";
 import { useCart } from "../../context/CartContext";
+import { useProduct } from "../../context/ProductContext";
 
 export default function Header() {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -15,7 +16,10 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <Icons.menuburger onClick={() => setIsLoggedIn("/")} />
+      <Icons.menuburger
+        onClick={() => setIsLoggedIn("/")}
+        style={{ cursor: "pointer" }}
+      />
       <AnimatedHeading className="svgclogo">
         {"SINSAY".split("").map((letter, index) => (
           <AnimatedLetter key={index} delay={index * 0.5}>
@@ -24,11 +28,17 @@ export default function Header() {
         ))}
       </AnimatedHeading>
       <StyledMan>
-        <Icons.Poisk />
-        <Icons.profile onClick={() => handleLogout("auth")} />
-        <Icons.like onClick={() => setIsLoggedIn("like")} />
-        <CartIcon onClick={() => setIsLoggedIn("sumka")}>
-          <Icons.Sumka />
+        <Icons.Poisk style={{ cursor: "pointer" }} />
+        <Icons.profile style={{ cursor: "pointer" }} />
+        <Icons.like
+          onClick={() => setIsLoggedIn("like")}
+          style={{ cursor: "pointer" }}
+        />
+        <CartIcon
+          onClick={() => setIsLoggedIn("sumka")}
+          style={{ cursor: "pointer" }}
+        >
+          <Icons.Sumka style={{ cursor: "pointer" }} />
           {cart.length > 0 && <CartCounter>{cart.length}</CartCounter>}
         </CartIcon>
       </StyledMan>
@@ -36,12 +46,17 @@ export default function Header() {
   );
 }
 
+const LikeIcon = styled.div`
+  position: relative;
+  cursor: pointer;
+`;
+
 const CartIcon = styled.div`
   position: relative;
   cursor: pointer;
 `;
 
-const CartCounter = styled.span`
+const Counter = styled.span`
   position: absolute;
   top: -5px;
   right: -10px;
@@ -99,12 +114,17 @@ const AnimatedLetter = styled.span`
 `;
 
 const StyledHeader = styled.header`
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
   display: flex;
+  z-index: 1;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid;
-  width: 100%;
-  height: 89px;
   padding: 0 30px;
   margin: 0 auto;
+  background-color: #ffff;
 `;
