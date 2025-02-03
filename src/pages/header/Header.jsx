@@ -34,12 +34,13 @@ export default function Header() {
           onClick={() => setIsLoggedIn("like")}
           style={{ cursor: "pointer" }}
         />
+        {favorites.length > 0 && <LikeCounter>{favorites.length}</LikeCounter>}
         <CartIcon
           onClick={() => setIsLoggedIn("sumka")}
           style={{ cursor: "pointer" }}
         >
           <Icons.Sumka style={{ cursor: "pointer" }} />
-          {cart.length > 0 && <CartCounter>{cart.length}</CartCounter>}
+          {cart.length > 0 && <Counter>{cart.length}</Counter>}
         </CartIcon>
       </StyledMan>
     </StyledHeader>
@@ -49,6 +50,22 @@ export default function Header() {
 const CartIcon = styled.div`
   position: relative;
   cursor: pointer;
+`;
+
+const LikeCounter = styled.span`
+  position: absolute;
+  top: 17px;
+  right: 100px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Counter = styled.span`
